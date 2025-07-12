@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -33,7 +37,7 @@ body {
 
 /* Section styling */
 section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 section:nth-child(even) {
@@ -43,12 +47,12 @@ section:nth-child(even) {
 /* Section headings */
 .section-title {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     position: relative;
 }
 
 .section-title h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font size */
     font-weight: 700;
     color: var(--secondary);
     text-transform: uppercase;
@@ -92,7 +96,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 4vw, 1.8rem); /* Responsive logo size */
     font-weight: 700;
     color: var(--text-light);
 }
@@ -151,7 +155,7 @@ nav {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://thumbs2.imgbox.com/6a/4b/ANIeZJYl_t.png') no-repeat center center/cover;
     color: var(--text-light);
     text-align: center;
 }
@@ -163,21 +167,18 @@ nav {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.3rem, 7vw, 3.5rem); /* Responsive heading */
     margin-bottom: 20px;
     font-weight: 800;
     line-height: 1.2;
+    padding: 0 15px; /* Added padding */
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.5rem); /* Responsive text */
     margin-bottom: 30px;
     opacity: 0.9;
-}
-
-.typed-text {
-    color: var(--primary);
-    font-weight: 600;
+    padding: 0 15px; /* Added padding */
 }
 
 .btn {
@@ -251,7 +252,7 @@ nav {
 }
 
 .about-text h3 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive heading */
     margin-bottom: 20px;
     color: var(--secondary);
 }
@@ -259,6 +260,7 @@ nav {
 .about-text p {
     margin-bottom: 15px;
     color: #444;
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive text */
 }
 
 .info-list {
@@ -268,6 +270,7 @@ nav {
 .info-list li {
     margin-bottom: 10px;
     display: flex;
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive text */
 }
 
 .info-list strong {
@@ -297,15 +300,19 @@ nav {
 }
 
 .skill-box i {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive icons */
     color: var(--primary);
     margin-bottom: 20px;
 }
 
 .skill-box h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive heading */
     margin-bottom: 15px;
     color: var(--secondary);
+}
+
+.skill-box p {
+    font-size: clamp(0.85rem, 2vw, 1rem); /* Responsive text */
 }
 
 /* Projects Section */
@@ -348,7 +355,7 @@ nav {
 }
 
 .project-content h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive heading */
     margin-bottom: 10px;
     color: var(--secondary);
 }
@@ -356,6 +363,7 @@ nav {
 .project-content p {
     margin-bottom: 15px;
     color: #666;
+    font-size: clamp(0.85rem, 2vw, 1rem); /* Responsive text */
 }
 
 .tags {
@@ -389,28 +397,35 @@ nav {
 }
 
 .contact-info h3 {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem); /* Responsive heading */
     margin-bottom: 20px;
 }
 
 .contact-info p {
     margin-bottom: 20px;
     opacity: 0.9;
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive text */
 }
 
 .contact-item {
     display: flex;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .contact-item i {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive icons */
     margin-right: 15px;
     color: white;
 }
 
 .contact-item div h4 {
     margin-bottom: 5px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive heading */
+}
+
+.contact-item div p {
+    font-size: clamp(0.85rem, 2vw, 1rem); /* Responsive text */
 }
 
 .contact-form .form-group {
@@ -444,6 +459,7 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .social-links a {
@@ -464,13 +480,20 @@ footer {
     transform: translateY(-5px);
 }
 
+footer p {
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive text */
+}
+
+/* ================== */
 /* Responsive Design */
+/* ================== */
 @media (max-width: 992px) {
     .about-content,
     .contact-container {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
-
+    
     .hero-content h1 {
         font-size: 2.8rem;
     }
@@ -491,6 +514,7 @@ footer {
         height: calc(100vh - 70px);
         padding-top: 30px;
         transition: 0.3s;
+        text-align: center;
     }
 
     .nav-links.active {
@@ -499,7 +523,7 @@ footer {
 
     .nav-links li {
         margin: 15px 0;
-        text-align: center;
+        padding: 0;
     }
 
     .projects-grid {
@@ -513,14 +537,90 @@ footer {
     .hero-content p {
         font-size: 1.2rem;
     }
+    
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .btn {
-        display: block;
+        width: 80%;
+        max-width: 250px;
         margin-bottom: 15px;
-        width: 100%;
     }
 
     .btn-outline {
         margin-left: 0;
+    }
+    
+    /* Fix for about image decoration on mobile */
+    .about-img::before {
+        top: -10px;
+        left: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .about-content {
+        gap: 30px;
+    }
+    
+    /* Remove decoration on very small screens */
+    .about-img::before {
+        display: none;
+    }
+    
+    .skills-container,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-box {
+        padding: 20px;
+    }
+    
+    .contact-container {
+        gap: 20px;
+    }
+    
+    .contact-info,
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+    }
+}
+
+/* Fix for iOS input zoom issue */
+@media screen and (max-width: 768px) {
+    input,
+    select,
+    textarea {
+        font-size: 16px;
     }
 }
